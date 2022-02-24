@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>{{grocery.text}}</p>
-        <Button @delete-grocery="$emit('delete-grocery', grocery.id)" title='X'/>
+        <Button :onClick="onDelete(grocery.id)" title='X'/>
     </div>
 </template>
 
@@ -16,6 +16,11 @@ export default {
     components: {
         Button
     },
-    emits: ['delete-grocery']
+    methods: {
+        onDelete(id) {
+            this.$emit('delete-item', id)
+        }
+    },
+    emits: ['delete-item']
 }
 </script>

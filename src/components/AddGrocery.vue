@@ -4,7 +4,7 @@
             <input type="text" v-model="text" name="grocery">
         </div>
         <div>
-            <Button  title='Submit Here'/>
+            <Button title='Submit Here'/>
         </div>
     </form>
 </template>
@@ -40,6 +40,7 @@ export default {
 
             this.$emit('add-grocery', newGrocery)
         } 
-    }
+    },
+    emits: ['add-grocery']
 }
 </script>
