@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <Header heading="Grocery Items" />
-        <Groceries @delete-item="$emit('delete-item', $event)" :groceries="groceries" />
-        <Button :onClick="onClear" title='Clear Items'/>
+        <Groceries @delete-item="$emit('deleteItem', $event)" :groceries="groceries" />
+        <Button :type="clearbtn" @click="onClear" title='Clear Items'/>
     </div>
 </template>
 
@@ -21,11 +21,16 @@ export default {
     props: {
         groceries: Array
     },
-    methods: {
-        onClear() {
-            this.$emit('clear-items')
+    data() {
+        return {
+            clearbtn : 'button'
         }
     },
-    emits: ['clear-items', 'delete-item']
+    methods: {
+        onClear() {
+            this.$emit('clearItems')
+        }
+    },
+    emits: ['clearItems', 'deleteItem']
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <button @click="onClick" >{{ title }}</button> 
+    <button @click.self="onClick($event)" :type="type" >{{ title }}</button> 
 </template>
 
 <script>
@@ -9,8 +9,13 @@ export default {
     props: {
         title: String,
         color: String,
-        onClick: Function,
+        type: String,
     },
+    methods: {
+        onClick(e) {
+            this.$emit('click', e)
+        }
+    }
 }
     
 </script>

@@ -1,10 +1,10 @@
 <template>
-    <form  @submit="submitGrocery">
+    <form  @submit.prevent="submitGrocery">
         <div>
             <input type="text" v-model="text" name="grocery">
         </div>
         <div>
-            <Button title='Submit Here'/>
+            <Button title="Submit Here" />
         </div>
     </form>
 </template>
@@ -23,9 +23,7 @@ export default {
         }
     },
     methods: {
-        submitGrocery(e) {
-            e.preventDefault();
-
+        submitGrocery() {
             if(!this.text) {
                 alert('Please add an item')
                 return
@@ -38,9 +36,9 @@ export default {
 
             this.text = ''
 
-            this.$emit('add-grocery', newGrocery)
+            this.$emit('addGrocery', newGrocery)
         } 
     },
-    emits: ['add-grocery']
+    emits: ['addGrocery']
 }
 </script>

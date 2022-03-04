@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <AddGroceryBlock @add-grocery="addGrocery" />
-    <DisplayGroceryBlock @delete-item="deleteGrocery" @clear-items="clearItems" :groceries="groceries" />
+    <DisplayGroceryBlock @clear-items="clearItems" @delete-item="deleteGrocery" :groceries="groceries" />
   </div> 
 </template>
 
@@ -26,11 +26,11 @@ export default {
     },
     clearItems() {
       this.groceries = []
+      console.log(this.groceries)
     },
     deleteGrocery(id) {
-      console.log(id)
       this.groceries = this.groceries.filter((grocery) => grocery.id !== id)
-    }
+    }, 
   }
 }
 </script>
