@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <AddGroceryBlock @add-grocery="addGrocery" />
+    <AddGroceryBlock @addgrocery="addGrocery" />
     <DisplayGroceryBlock @delete-item="deleteGrocery" @clear-items="clearItems" :groceries="groceries" />
   </div> 
 </template>
@@ -25,9 +25,11 @@ export default {
         this.groceries = [...this.groceries, grocery]
     },
     clearItems() {
+      console.log('meca')
       this.groceries = []
     },
     deleteGrocery(id) {
+      
       console.log(id)
       this.groceries = this.groceries.filter((grocery) => grocery.id !== id)
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <Header heading="Add Grocery Items" />
-        <AddGrocery @add-grocery="$emit('add-grocery', $event)" />
+        <AddGrocery @addgrocery="$emit('addgrocery', $event)" />
     </div> 
 </template>
 
@@ -15,6 +15,6 @@ export default {
         Header,
         AddGrocery
     },
-    emits: ['add-grocery']
+    emits: ['addgrocery']
 }
 </script>

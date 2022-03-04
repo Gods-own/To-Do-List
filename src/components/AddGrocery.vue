@@ -38,9 +38,9 @@ export default {
 
             this.text = ''
 
-            this.$emit('add-grocery', newGrocery)
+            this.$emit('addgrocery', newGrocery)
         } 
     },
-    emits: ['add-grocery']
+    emits: ['addgrocery']
 }
 </script>
