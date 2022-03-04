@@ -1,6 +1,6 @@
 <template>
     <div :key="grocery.id" v-for="grocery in groceries">
-        <Grocery @delete-item="$emit('delete-item', $event)" :grocery="grocery" />
+        <Grocery :grocery="grocery"  @delete-item="$emit('deleteItem', grocery.id)" />
     </div>
 </template>
 
@@ -14,6 +14,6 @@ export default {
     components: {
         Grocery
     },
-    emits: ['delete-item']
+    emits: ['deleteItem']
 }
 </script>

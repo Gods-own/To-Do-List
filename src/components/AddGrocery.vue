@@ -1,17 +1,16 @@
 <template>
-    <form  @submit="submitGrocery">
+    <form  @submit.prevent="submitGrocery">
         <div>
-            <input type="text" v-model="text" name="grocery">
+            <input class="input" type="text" v-model="text" name="grocery">
         </div>
         <div>
-            <Button title='Submit Here'/>
+            <Button class="button first" title="Submit Here" />
         </div>
     </form>
 </template>
 
 <script>
 import Button from './Button'
-
 export default {
     name: 'AddGrocery',
     components: {
@@ -23,24 +22,31 @@ export default {
         }
     },
     methods: {
-        submitGrocery(e) {
-            e.preventDefault();
-
+        submitGrocery() {
             if(!this.text) {
                 alert('Please add an item')
                 return
             }
-
             const newGrocery = {
                 id: Math.floor(Math.random() * 10000),
                 text: this.text
             }
-
             this.text = ''
-
-            this.$emit('addgrocery', newGrocery)
+            this.$emit('addGrocery', newGrocery)
         } 
     },
-    emits: ['addgrocery']
+    emits: ['addGrocery']
 }
 </script>
+
+<style scoped>
+.input {
+    border: 2px solid skyblue;
+    border-style: none none solid none;
+    background-color: darkred;
+    outline: none;
+    width: 350px;
+    color: skyblue;
+    font-size: 20px;
+}
+</style>

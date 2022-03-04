@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>{{grocery.text}}</p>
-        <Button :onClick="onDelete(grocery.id)" title='X'/>
+        <Button class="delete-btn" :type="deletebtn" @click="onDelete(grocery.id)" title="X" />
     </div>
 </template>
 
@@ -13,14 +13,42 @@ export default {
     props: {
         grocery: Object
     },
+    data() {
+        return {
+            deletebtn : 'button'
+        }
+    },
     components: {
         Button
     },
     methods: {
         onDelete(id) {
-            this.$emit('delete-item', id)
+            console.log('finger')
+            this.$emit('deleteItem', id)
         }
     },
-    emits: ['delete-item']
+    emits: ['deleteItem'],
 }
 </script>
+
+<style scoped>
+.delete-btn {
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    float: right;
+}
+div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+p {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+</style>

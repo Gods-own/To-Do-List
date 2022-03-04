@@ -1,14 +1,13 @@
 <template>
-  <div class="container">
-    <AddGroceryBlock @addgrocery="addGrocery" />
-    <DisplayGroceryBlock @delete-item="deleteGrocery" @clear-items="clearItems" :groceries="groceries" />
+  <div>
+    <AddGroceryBlock @add-grocery="addGrocery" />
+    <DisplayGroceryBlock @clear-items="clearItems" @delete-item="deleteGrocery" :groceries="groceries" />
   </div> 
 </template>
 
 <script>
 import AddGroceryBlock from './components/AddGroceryBlock'
 import DisplayGroceryBlock from './components/DisplayGroceryBlock'
-
 export default {
   name: 'App',
   components: {
@@ -25,19 +24,22 @@ export default {
         this.groceries = [...this.groceries, grocery]
     },
     clearItems() {
-      console.log('meca')
       this.groceries = []
     },
     deleteGrocery(id) {
-      
-      console.log(id)
       this.groceries = this.groceries.filter((grocery) => grocery.id !== id)
-    }
+    }, 
   }
 }
 </script>
 
 <style>
+*{
+	box-sizing: border-box;
+}
+body{
+	background-color: brown;
+}
 .container {
   border: 1px solid black;
 }
