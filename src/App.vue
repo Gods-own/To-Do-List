@@ -34,14 +34,12 @@ export default {
 </script>
 
 <style>
+@import "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css";
 *{
 	box-sizing: border-box;
 }
 body{
-	background-color: brown;
-}
-.container {
-  border: 1px solid black;
+	background: linear-gradient(to right, #3B8BEA, #F070A1)
 }
 </style>
 

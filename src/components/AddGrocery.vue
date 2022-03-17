@@ -4,7 +4,7 @@
             <input class="input" type="text" v-model="text" name="grocery">
         </div>
         <div>
-            <Button class="button first" title="Submit Here" />
+            <Button class="button first">Submit Here</Button>
         </div>
     </form>
 </template>
@@ -41,12 +41,9 @@ export default {
 
 <style scoped>
 .input {
-    border: 2px solid skyblue;
     border-style: none none solid none;
-    background-color: darkred;
     outline: none;
     width: 350px;
-    color: skyblue;
     font-size: 20px;
 }
 </style>

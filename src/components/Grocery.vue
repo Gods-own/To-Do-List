@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="grocery">
         <p>{{grocery.text}}</p>
-        <Button class="delete-btn" :type="deletebtn" @click="onDelete(grocery.id)" title="X" />
+        <Button class="delete-btn" :type="deletebtn" @click="onDelete(grocery.id)"><i class="las la-trash"></i></Button>
     </div>
 </template>
 
@@ -23,7 +23,6 @@ export default {
     },
     methods: {
         onDelete(id) {
-            console.log('finger')
             this.$emit('deleteItem', id)
         }
     },
@@ -35,12 +34,9 @@ export default {
 .delete-btn {
     border: none;
     outline: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: black;
-    color: white;
-    float: right;
+    background-color: transparent;
+    color: black;
+    font-size: 1.4rem;
 }
 div {
     display: flex;
@@ -50,5 +46,14 @@ div {
 p {
     font-size: 20px;
     text-transform: capitalize;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+.grocery {
+    background-color: #f4efef;
+    margin-top: 1rem;
+    padding-left: 0.7rem;
+    padding-right: 0.6rem;
+    border-radius: 5px;
 }
 </style>

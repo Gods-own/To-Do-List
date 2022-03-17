@@ -1,5 +1,7 @@
 <template>
-    <button @click="onClick($event)" :type="type" >{{ title }}</button> 
+    <button @click="onClick($event)" :type="type" >
+        <slot></slot>
+    </button> 
 </template>
 
 <script>
@@ -7,7 +9,6 @@
 export default {
     name: 'Button',
     props: {
-        title: String,
         color: String,
         type: String,
     },

@@ -3,7 +3,7 @@
         <Message :class="{ active : isActive, clear : isCleared, removed : isRemoved }" :msg="msg" />
         <Header class="heading-second" heading="Grocery Items" />
         <Groceries @delete-item="updateMessage" :groceries="groceries" />
-        <Button class="button second" :type="clearbtn" @click="onClear" title='Clear Items'/>
+        <Button class="button second" :type="clearbtn" @click="onClear">Clear Items</Button>
     </div>
 </template>
 
