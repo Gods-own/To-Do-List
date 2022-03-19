@@ -36,24 +36,32 @@ export default {
     outline: none;
     background-color: transparent;
     color: black;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
-div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 p {
-    font-size: 20px;
+    font-size: 1rem;
     text-transform: capitalize;
     margin-top: 0.6rem;
     margin-bottom: 0.6rem;
 }
 .grocery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #f4efef;
     margin-top: 1rem;
     padding-left: 0.7rem;
     padding-right: 0.6rem;
-    border-radius: 5px;
+}
+@media screen and (min-width: 539px) {
+    .delete-btn {
+        font-size: 1.4rem;
+    }
+    p {
+        font-size: 20px;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+    } 
 }
 </style>

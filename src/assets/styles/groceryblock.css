@@ -1,33 +1,33 @@
+h2 {
+	font-size: 1.2rem;
+}
+
 .firstdiv, .seconddiv {
     background-color: white;
     margin: auto;
     text-align: center;
-    width: 500px;
-    box-shadow: 3px 5px 10px 1px;
-    border-radius: 5px;
+    width: 97%;
+	border-radius: 5px;
+	box-shadow: 3px 5px 10px 1px;
 }
 
 .firstdiv {
-    min-height: 200px;
-    margin-top: 70px;
-    padding-top: 10px;
-    padding-bottom: 7px;
+    margin-top: 4rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 
 .seconddiv {
-    min-height: 130px;
-    margin-top: 30px;
-    padding-top: 10px;
-    padding-bottom: 6px;
-    padding-left: 30px;
-    padding-right: 30px;
+    margin-top: 1.8rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.3rem;
 }
 
 .button {
-    height: 35px;
-    border-radius: 5px;
-    width: 300px;
-    font-size: 20px;
+    height: 33px;
+	border-radius: 5px;
+	width: 180px;
+	font-size: 0.9rem;
 }
 
 .first, .second {
@@ -40,43 +40,92 @@
     display: block;
     background-color: #92B2FD;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 1.2rem;
 }
 
 .second {
     background-color: #F594B7;
     font-weight: bold;
-    margin-top: 25px;
+    margin-top: 0.3rem;
 }
 
 .heading-first {
     color: white;
 }
 
-.add {
-    width: 300px;
+.add, .clear, .removed {
+    width: 93%;
+	font-size: 0.9rem;
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
+    text-transform: capitalize;
+}
+
+.add {
     background-color: green;
-    text-transform: uppercase;
     margin: 0 auto;
 }
 
 .clear {
-    width: 300px;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
     background-color: #ffe100;
-    text-transform: uppercase;
     margin: 0 auto;
 }
 
 .removed {
-    width: 300px;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
     background-color: red;
-    text-transform: uppercase;
     margin: 0 auto;
 }
+@media screen and (min-width:539px) {
+    .firstdiv, .seconddiv {
+        width: 500px;
+    }
+
+    .firstdiv {
+        min-height: 200px;
+        margin-top: 70px;
+        padding-top: 10px;
+        padding-bottom: 7px;
+    }
+
+    .seconddiv {
+        min-height: 130px;
+        margin-top: 30px;
+        padding-top: 10px;
+        padding-bottom: 6px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .button {
+        height: 35px;
+        width: 300px;
+        font-size: 20px;
+    }
+
+    .first {
+        margin-top: 20px;
+    }
+
+    .second {
+        margin-top: 25px;
+    }
+
+    .add {
+        width: 300px;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+    }
+
+    .clear {
+        width: 300px;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+    }
+
+    .removed {
+        width: 300px;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+    }
+}    
 

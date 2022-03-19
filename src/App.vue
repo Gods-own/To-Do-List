@@ -22,13 +22,28 @@ export default {
   methods: {
     addGrocery(grocery) {
         this.groceries = [...this.groceries, grocery]
+        const parsed = JSON.stringify(this.groceries);
+        localStorage.setItem('groceries', parsed)
     },
     clearItems() {
       this.groceries = []
+      const parsed = JSON.stringify(this.groceries);
+      localStorage.setItem('groceries', parsed)
     },
     deleteGrocery(id) {
       this.groceries = this.groceries.filter((grocery) => grocery.id !== id)
+      const parsed = JSON.stringify(this.groceries);
+      localStorage.setItem('groceries', parsed)
     }, 
+  },
+  mounted() {
+    if (localStorage.getItem('groceries')) {
+        try {
+            this.groceries = JSON.parse(localStorage.getItem('groceries'));
+        } catch (e) {
+            localStorage.removeItem('groceries');
+        }
+    }    
   }
 }
 </script>
@@ -40,6 +55,11 @@ export default {
 }
 body{
 	background: linear-gradient(to right, #3B8BEA, #F070A1)
+}
+@media screen and (min-width: 385px) and (max-width: 538px){
+	html {
+		font-size: 19px;
+	}
 }
 </style>
 

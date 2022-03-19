@@ -23,14 +23,31 @@ export default {
     },
     methods: {
         submitGrocery() {
+            let newGrocery
             if(!this.text) {
-                alert('Please add an item')
-                return
-            }
-            const newGrocery = {
-                id: Math.floor(Math.random() * 10000),
-                text: this.text
-            }
+                newGrocery = null
+            } else {
+                let groceryItems = JSON.parse(localStorage.getItem('groceries'));
+
+                let id;
+                let uniqueId;
+                let index;
+
+                do {
+                    uniqueId = Math.floor(Math.random() * 10000)
+                    index = groceryItems.findIndex((groceryItem) => {
+                    return groceryItem.id === uniqueId
+                    })
+                } 
+                while(index !== -1)
+
+                id = uniqueId
+
+                newGrocery = {
+                    id: id,
+                    text: this.text
+                }
+            }  
             this.text = ''
             this.$emit('addGrocery', newGrocery)
         } 
@@ -43,7 +60,13 @@ export default {
 .input {
     border-style: none none solid none;
     outline: none;
-    width: 350px;
-    font-size: 20px;
+    width: 93%;
+    font-size: 1rem;
+}
+@media screen and (min-width: 539px) {
+    .input {
+        width: 350px;
+        font-size: 20px;
+    }
 }
 </style>

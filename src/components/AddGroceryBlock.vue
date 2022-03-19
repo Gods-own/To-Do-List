@@ -25,12 +25,20 @@ export default {
     },
     methods: {
         updateMessage(grocery) {
-            this.msg = `${grocery.text} added to items` 
-            this.isActive = false
-            const showMessage = setTimeout(function () {
-                this.isActive = true
-            }.bind(this), 2000)
-            this.$emit('addGrocery', grocery)
+            if (grocery === null) {
+               this.msg = "Please add grocery item" 
+               this.isActive = false
+               setTimeout(function () {
+                    this.isActive = true
+                }.bind(this), 2000)
+            } else {
+                this.msg = `${grocery.text} added to items` 
+                this.isActive = false
+                setTimeout(function () {
+                    this.isActive = true
+                }.bind(this), 2000)
+                this.$emit('addGrocery', grocery)
+            }    
         }
     },
     emits: ['addGrocery']
