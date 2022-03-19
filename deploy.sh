@@ -10,5 +10,5 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:Gods-own/To-Do-List.git master:gh-pages
+git push -f git@github.com:Gods-own/To-Buy-List.git master:gh-pages
 cd -

@@ -18,7 +18,8 @@ export default {
     },
     data() {
         return {
-            text: ''
+            text: '',
+            groceryItems: []
         }
     },
     methods: {
@@ -27,7 +28,6 @@ export default {
             if(!this.text) {
                 newGrocery = null
             } else {
-                let groceryItems = JSON.parse(localStorage.getItem('groceries'));
 
                 let id;
                 let uniqueId;
@@ -35,7 +35,7 @@ export default {
 
                 do {
                     uniqueId = Math.floor(Math.random() * 10000)
-                    index = groceryItems.findIndex((groceryItem) => {
+                    index = this.groceryItems.findIndex((groceryItem) => {
                     return groceryItem.id === uniqueId
                     })
                 } 
@@ -52,7 +52,16 @@ export default {
             this.$emit('addGrocery', newGrocery)
         } 
     },
-    emits: ['addGrocery']
+    emits: ['addGrocery'],
+    mounted() {
+        if (localStorage.getItem('groceries')) {
+            try {
+                this.groceryItems = JSON.parse(localStorage.getItem('groceries'));
+            } catch (e) {
+                localStorage.removeItem('groceries');
+            }
+        }    
+     }
 }
 </script>
 
