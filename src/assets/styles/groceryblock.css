@@ -5,16 +5,20 @@ h2 {
 .firstdiv, .seconddiv {
     background-color: white;
     margin: auto;
-    text-align: center;
     width: 97%;
 	border-radius: 5px;
 	box-shadow: 3px 5px 10px 1px;
 }
 
 .firstdiv {
+    text-align: center;
     margin-top: 4rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
+}
+
+.btn-div {
+    text-align: center;
 }
 
 .seconddiv {
@@ -53,11 +57,17 @@ h2 {
     color: white;
 }
 
+.heading-second {
+    text-align: center;
+}
+
 .add, .clear, .removed {
     width: 93%;
 	font-size: 0.9rem;
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
+    text-align: center;
+    word-break: break-all;
     text-transform: capitalize;
 }
 
@@ -114,18 +124,21 @@ h2 {
         width: 300px;
         padding-top: 0.1rem;
         padding-bottom: 0.1rem;
+        word-break: break-word;
     }
 
     .clear {
         width: 300px;
         padding-top: 0.1rem;
         padding-bottom: 0.1rem;
+        word-wrap: break-word;
     }
 
     .removed {
         width: 300px;
         padding-top: 0.1rem;
         padding-bottom: 0.1rem;
+        word-wrap: break-word;
     }
 }    
 

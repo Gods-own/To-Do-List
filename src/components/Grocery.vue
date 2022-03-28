@@ -1,6 +1,6 @@
 <template>
     <div class="grocery">
-        <p>{{grocery.text}}</p>
+        <div><p>{{grocery.text}}</p></div>
         <Button class="delete-btn" :type="deletebtn" @click="onDelete(grocery.id)"><i class="las la-trash"></i></Button>
     </div>
 </template>
@@ -48,12 +48,19 @@ p {
 .grocery {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     background-color: #f4efef;
     margin-top: 1rem;
     padding-left: 0.7rem;
     padding-right: 0.6rem;
 }
+
+.grocery div {
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
 @media screen and (min-width: 539px) {
     .delete-btn {
         font-size: 1.4rem;
